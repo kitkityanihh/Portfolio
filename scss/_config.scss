@@ -1,8 +1,8 @@
-$primary-color: rgb(214, 226, 228);
-$secondary-color: #0c94d3;
+$primary-color: rgb(0, 136, 226);
+$secondary-color: #12d4ee;
 $show-home-image: true;
 $home-image: url(../img/background.jpg);
-$background-opacity: 0;
+$background-opacity: 0.5;
 
 @mixin easeOut {
   transition: all 0.5s ease-out;
@@ -14,17 +14,6 @@ $background-opacity: 0;
       background: $home-image;
       background-attachment: fixed;
       background-size: cover;
-
-      &:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        background: rgba($primary-color, $background-opacity);
-      }
     }
   }
 }
@@ -32,9 +21,9 @@ $background-opacity: 0;
 // Set Text Color
 @function set-text-color($color) {
   @if (lightness($color) > 40) {
-    @return #000;
+    @return rgb(255, 255, 255);
   } @else {
-    @return #fff;
+    @return rgb(0, 0, 0);
   }
 }
 

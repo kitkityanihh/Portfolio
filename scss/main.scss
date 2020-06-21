@@ -1,5 +1,6 @@
 @import "config";
 @import "menu";
+@import "animation";
 
 * {
   box-sizing: border-box;
@@ -24,12 +25,14 @@ h3 {
 
   &.lg-heading {
     font-size: 6rem;
+    -webkit-text-stroke: 1px rgb(36, 152, 230);
   }
 
   &.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
     background: rgba(lighten($primary-color, 2), 0.5);
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
   }
 }
 
@@ -43,10 +46,12 @@ header {
   z-index: 2;
   width: 100%;
 }
-
+p {
+  -webkit-text-stroke: 1px rgb(0, 0, 0);
+}
 .text-secondary {
-  color: $secondary-color;
-  -webkit-text-stroke: 1px rgb(55, 72, 224);
+  color: #ffffff;
+  -webkit-text-stroke: 1px rgb(0, 0, 0);
 }
 
 main {
@@ -62,7 +67,7 @@ main {
       @include easeOut;
 
       &:hover {
-        color: $secondary-color;
+        color: $primary-color;
       }
     }
   }
@@ -77,17 +82,19 @@ main {
 
 .about-info {
   display: grid;
-  grid-gap: 30px;
+  grid-gap: 20px;
   grid-template-areas:
     "bioimage bio bio"
-    "job1 job2 job3";
-  grid-template-columns: repeat(3, 1fr);
+    "job1 job1 job1"
+    "logo logo logo";
+  grid-template-columns: repeat(2, 1fr);
 
   .bio-image {
     grid-area: bioimage;
     margin: auto;
     border-radius: 50%;
     border: $secondary-color 3px solid;
+    animation: tada animated;
   }
 
   .bio {
@@ -97,23 +104,23 @@ main {
 
   .job-1 {
     grid-area: job1;
+    justify-items: center;
   }
 
-  .job-2 {
-    grid-area: job2;
-  }
+  .logo-image {
+    display: grid;
+    grid-area: logo;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    grid-row-gap: 30px;
 
-  .job-3 {
-    grid-area: job3;
-  }
-
-  .job {
-    background: lighten($primary-color, 5);
-    padding: 0.5rem;
-    border-bottom: $secondary-color 5px solid;
+    img {
+      width: 40%;
+      filter: grayscale(80%);
+    }
+    justify-items: center;
   }
 }
-
 // Work/Projects
 .projects {
   display: grid;
@@ -188,6 +195,42 @@ main {
   background: darken($primary-color, 10);
   color: set-text-color($primary-color);
   height: 60px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 20px;
+  color: #db3a34;
+}
+
+.bar {
+  width: 90%;
+  height: 35px;
+  background: #fff;
+  border-radius: 5px;
+  position: relative;
+  transition: all 2s linear;
+}
+
+.bar-1,
+.my-skills {
+  width: 80%;
+  margin: 10px auto 25px;
+}
+
+.bar-inner {
+  width: 0;
+  height: 35px;
+  line-height: 35px;
+  background: #f0615c;
+  border-radius: 5px 0 0 5px;
+}
+
+.bar-percent {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 18px;
 }
 
 @import "mobile";

@@ -49,6 +49,7 @@
       background: url("../img/hero_small.jpg");
       width: 150px;
       height: 150px;
+      animation: flip animated;
     }
   }
 
@@ -57,7 +58,7 @@
       "bioimage"
       "bio"
       "job1"
-      "job2"
+      "logo"
       "job3";
 
     grid-template-columns: 1fr;

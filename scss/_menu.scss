@@ -1,4 +1,15 @@
 // Menu Button
+.logo {
+  float: left;
+  position: absolute;
+  z-index: 3;
+  left: 35px;
+  top: 20px;
+  cursor: pointer;
+  height: 50px;
+  width: 65px;
+  @include easeOut;
+}
 .menu-btn {
   position: absolute;
   z-index: 3;
@@ -14,7 +25,6 @@
     background: set-text-color($primary-color);
     @include easeOut;
   }
-
   // Rotate Into X With Menu Lines
   &.close {
     transform: rotate(180deg);
@@ -92,7 +102,8 @@
       height: 250px;
       background: url("../img/hero.jpg");
       border-radius: 50%;
-      border: solid 3px $secondary-color;
+      border: solid 3px #ffffff;
+      animation: flip animated;
     }
   }
 
@@ -106,7 +117,7 @@
     }
 
     &.current > a {
-      color: $secondary-color;
+      color: #0534cf;
     }
   }
 

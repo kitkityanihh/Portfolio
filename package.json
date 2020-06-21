@@ -9,6 +9,7 @@
   "author": "Keith Adorna",
   "license": "MIT",
   "dependencies": {
+    "aos": "^2.3.4",
     "node-sass": "4.14.1"
   }
 }
